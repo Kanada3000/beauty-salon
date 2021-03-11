@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Beauty Lady</title>
+
+    <link rel="stylesheet" href="/styles/table.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/styles/general.css">
+
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/images/favicon.ico">
+</head>
+<body>
+
+{{> blocks/top}}
+
+{{> blocks/admin-menu}}
+
+<div id="data">
+    <table>
+        <thead>
+        <tr>
+            <td>Клієнт</td>
+            <td>Послуга</td>
+            <td>Дата</td>
+            <td>Час</td>
+            <td>Статус</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#visits}}
+        <tr>
+            <td>{{users.name}}</td>
+            <td>{{services.name}}</td>
+            <td>{{date}}</td>
+            <td>{{time}}</td>
+            <td>{{status}}</td>
+        </tr>
+        {{/visits}}
+        </tbody>
+    </table>
+</div>
+<div id="footer">&copy; Beauty Lady 2020</div>
+</body>
+</html>

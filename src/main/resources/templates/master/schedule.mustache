@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Beauty Lady</title>
+
+    <link rel="stylesheet" href="/styles/table.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/styles/general.css">
+
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/images/favicon.ico">
+</head>
+<body>
+
+{{> blocks/top}}
+
+{{> blocks/master-menu}}
+
+<div id="data">
+    <table>
+        <thead>
+        <tr>
+            <td>Клієнт</td>
+            <td>Послуга</td>
+            <td>Дата</td>
+            <td>Час</td>
+            <td>Статус</td>
+            <td></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#visit}}
+        <tr>
+            <td>{{users.name}}</td>
+            <td>{{services.name}}</td>
+            <td>{{date}}</td>
+            <td>{{time}}</td>
+            <td>{{status}}</td>
+            <td><a href="/master/edit/{{id}}"><img src="/images/pen.png"></a></td>
+            <td><a href="/master/delete/{{id}}"><img src="/images/trash.png" height="40px"></a></td>
+        </tr>
+        {{/visit}}
+
+        {{#edit}}
+        <form action="/master/edit/{{id}}" method="post">
+            <tr>
+                <td>{{users.name}}</td>
+                <td>{{services.name}}</td>
+                <td>
+                    <input type="date" name="date"/>
+                </td>
+                <td>
+                    <input type="time" name="time" min="08:00" max="16:00"/>
+                </td>
+                <td>{{status}}</td>
+            </tr>
+            <tr>
+                <td><input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                    <input type="image" name="picture" src="/images/check-mark.png"/></td>
+                <td><a href="/master"><img src="/images/cancel.png"></a></td>
+            </tr>
+        </form>
+        {{/edit}}
+        </tbody>
+    </table>
+</div>
+<div id="footer">&copy; Beauty Lady 2020</div>
+</body>
+</html>

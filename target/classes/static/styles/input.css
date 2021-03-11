@@ -1,0 +1,40 @@
+input {
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+    align: center;
+    position: center;
+}
+
+input[type="text"] {
+    border: 1px solid #292829;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    padding: 12px 10px;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+input[type="password"] {
+    border: 1px solid #292829;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    padding: 12px 10px;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+select {
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+    align: center;
+    position: center;
+    border: 1px solid #292829;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    padding: 12px 10px;
+}

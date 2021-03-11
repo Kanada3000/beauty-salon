@@ -1,0 +1,137 @@
+.holder-nail {
+    position: relative;
+    margin: 15px;
+    font-family: Monotype Corsiva, fantasy;
+    font-size: 72px;
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    font-weight: lighter;
+    padding: 40px;
+    background: url(../images/nails.png);
+    background-size: cover;
+    color: #2b2b2b;
+    border: 5px solid #1e848e;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.holder-hair {
+    position: relative;
+    margin: 15px;
+    font-family: Monotype Corsiva, fantasy;
+    font-size: 72px;
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    font-weight: lighter;
+    padding: 40px;
+    background: url(../images/hair.jpg);
+    background-size: cover;
+    color: #2b2b2b;
+    border: 5px solid #633946;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.holder-cosm {
+    position: relative;
+    margin: 15px;
+    font-family: Monotype Corsiva, fantasy;
+    font-size: 52px;
+    color: #2b2b2b;
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    font-weight: lighter;
+    padding: 40px;
+    background: url(../images/cosmetic.jfif);
+    background-size: cover;
+    border: 5px solid #2b2b2b;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.holder-other {
+    font-family: Monotype Corsiva, fantasy;
+    background: url(../images/other.jpg);
+    font-size: 72px;
+    color: #fdfdfe;
+    position: relative;
+    margin: 15px;
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    font-weight: lighter;
+    padding: 40px;
+    background-size: cover;
+    border: 5px solid #2b2b2b;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.block {
+    font-family: Century Gothic, fantasy;
+    font-size: 24px;
+    text-align: left;
+    position: absolute;
+    height: 370px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 100px;
+    padding: 5px;
+    display: none;
+}
+
+.holder-nail:hover .block {
+    background: rgba(187, 232, 237, 0.9);
+    display: block;
+}
+
+.holder-hair:hover .block {
+    background: rgba(232, 186, 199, 0.9);
+    display: block;
+}
+
+.holder-cosm:hover .block {
+    background: rgba(236, 208, 171, 0.9);
+    display: block;
+}
+
+.holder-other:hover .block {
+    background: rgba(44, 74, 46, 0.9);
+    display: block;
+}
+
+.a-service {
+    margin: 10px;
+    text-decoration: none;
+    color: #2b2b2b;
+}
+
+.a-service:hover {
+    text-decoration: underline;
+}
+
+.a-service-other {
+    margin: 10px;
+    text-decoration: none;
+    color: #fbfcfd;
+}
+
+.a-service-other:hover {
+    text-decoration: underline;
+}
