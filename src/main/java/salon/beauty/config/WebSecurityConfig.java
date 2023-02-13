@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll();
         
-        http.csrf().ignoringAntMatchers("/h2-console/**").and().headers().frameOptions().disable();
+//        http.csrf().ignoringAntMatchers("/h2-console/**").and().headers().frameOptions().disable();
     }
 
     @Override

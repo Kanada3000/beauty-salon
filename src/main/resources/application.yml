@@ -12,8 +12,8 @@ spring:
     console:
       settings:
         web-allow-others: true
-      path: /h2-console
-      enabled: true
+#      path: /h2-console
+#      enabled: true
   
   mustache:
     expose-request-attributes: true
