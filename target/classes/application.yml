@@ -1,0 +1,23 @@
+spring:
+  datasource:
+
+    # H2 database configuration.
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:beauty-salon
+    username: sa
+    password: 
+
+  # H2 database console configuration.
+  h2:
+    console:
+      settings:
+        web-allow-others: true
+      path: /h2-console
+      enabled: true
+  
+  mustache:
+    expose-request-attributes: true
+    
+  jpa:
+    hibernate:
+      ddl-auto: none

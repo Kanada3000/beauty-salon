@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import salon.beauty.services.UserService;
 
@@ -33,6 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+		        .authorizeRequests().antMatchers("/h2-console/**").permitAll()
+		        .and()
                 .authorizeRequests()
                 .antMatchers("/registration").permitAll()
                 .anyRequest().authenticated()
@@ -43,6 +44,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .permitAll();
+        
+        http.csrf().ignoringAntMatchers("/h2-console/**").and().headers().frameOptions().disable();
     }
 
     @Override

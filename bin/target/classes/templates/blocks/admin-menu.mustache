@@ -1,0 +1,13 @@
+<div id="sidebar">
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type="submit" class="button" >ВИХІД</button>
+    </form>
+    <br/>
+    <p><a {{#users}}class="active-button"{{/users}}{{^ users}} class="ghost-button-thick-border" href="/" {{/users}}>УПРАВЛІННЯ КОРИСТУВАЧАМИ</a></p>
+    <p><a {{#masters}}class="active-button" {{/masters}}{{^ masters}} class="ghost-button-thick-border" href="/admin/cast" {{/masters}}>УПРАВЛІННЯ ПЕРСОНАЛОМ</a></p>
+    <p><a {{#services}}class="active-button" {{/services}}{{^ services}} class="ghost-button-thick-border" href="/admin/services" {{/services}}>УПРАВЛІННЯ ПОСЛУГАМИ</a></p>
+    <p><a {{#visit}}class="active-button" {{/visit}}{{^ visit}} class="ghost-button-thick-border" href="/admin/visit" {{/visit}}>ПЕРЕГЛЯД ЗАПИСІВ</a></p>
+    <br/>
+    <p><a {{#account}}class="active-button" {{/account}}{{^ account}} class="ghost-button-thick-border" href="/admin/account" {{/account}}>ОСОБИСТИЙ КАБІНЕТ</a></p>
+</div>

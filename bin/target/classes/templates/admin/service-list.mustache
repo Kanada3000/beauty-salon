@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Beauty Lady</title>
+
+    <link rel="stylesheet" href="/styles/table.css">
+    <link rel="stylesheet" href="/styles/input.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/styles/general.css">
+
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/images/favicon.ico">
+</head>
+<body>
+
+{{> blocks/top}}
+
+{{> blocks/admin-menu}}
+
+<div id="data">
+    <table>
+        <thead>
+        <tr>
+            <td>Назва</td>
+            <td>Категорія</td>
+            {{^add}}
+            {{^serv}}
+            <td><a href="/admin/services/add"><img src="/images/plus.png"></a></td>
+            {{/serv}}
+            {{/add}}
+            {{#add}}
+            <td></td>
+            {{/add}}
+            {{#serv}}
+            <td></td>
+            {{/serv}}
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#service}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{category}}</td>
+            <td><a href="/admin/services/{{id}}/edit"><img src="/images/pen.png"></a></td>
+            <td><a href="/admin/services/{{id}}/delete"><img src="/images/trash.png" height="40px"></a></td>
+        </tr>
+        {{/service}}
+
+        {{#serv}}
+        <form action="/admin/services/{{id}}/edit" method="post">
+            <tr>
+                <td><input type="text" name="name" placeholder="{{name}}"/></td>
+                <td>
+                    <select name="category">
+                        <option value="Манікюр" selected>Манікюр</option>
+                        <option value="Зачіски">Зачіски</option>
+                        <option value="Косметологія">Косметологія</option>
+                        <option value="Інше">Інше</option>
+                    </select>
+                </td>
+                <td><input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                    <input type="image" name="picture" src="/images/check-mark.png"/></td>
+                <td><a href="/admin/services"><img src="/images/cancel.png"></a></td>
+            <tr/>
+        </form>
+        {{/serv}}
+
+        {{#add}}
+        <form action="/admin/services/add" method="post">
+            <tr>
+                <td><input type="text" name="name" placeholder="Назва"/></td>
+                <td>
+                    <select name="category">
+                        <option value="Манікюр" selected>Манікюр</option>
+                        <option value="Зачіски">Зачіски</option>
+                        <option value="Косметологія">Косметологія</option>
+                        <option value="Інше">Інше</option>
+                    </select>
+                </td>
+                <td><input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                    <input type="image" name="picture" src="/images/check-mark.png"/></td>
+                <td><a href="/admin/services"><img src="/images/cancel.png"></a></td>
+            <tr/>
+        </form>
+        {{/add}}
+        </tbody>
+    </table>
+</div>
+<div id="footer">&copy; Beauty Lady 2020</div>
+</body>
+</html>

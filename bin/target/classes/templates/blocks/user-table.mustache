@@ -1,0 +1,119 @@
+<table>
+    {{^add}}
+    {{^us}}
+    <thead>
+    <tr>
+        <td>Ім'я</td>
+        <td>Телефон</td>
+        <td>Логін</td>
+        <td>Роль</td>
+        {{^add}}
+        {{^us}}
+        <td><a href="/admin/user/add"><img src="/images/plus.png"></a></td>
+        {{/us}}
+        {{/add}}
+        {{#add}}
+        <td>Пароль</td>
+        <td></td>
+        {{/add}}
+        <td></td>
+    </tr>
+    </thead>
+    {{/us}}
+    {{/add}}
+    <tbody>
+    {{#user}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{phone}}</td>
+        <td>{{username}}</td>
+        <td>{{roles}}</td>
+        <td><a href="/admin/user/{{id}}/edit"><img src="/images/pen.png"></a></td>
+        <td><a href="/admin/user/{{id}}/delete"><img src="/images/trash.png" height="40px"></a></td>
+    </tr>
+    {{/user}}
+
+    {{#us}}
+    <form action="/admin/user/{{id}}/edit" method="post">
+
+        <tr>
+            <td><b>Ім'я</b></td>
+            <td><input type="text" name="name" placeholder="{{name}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Телефон (у форматі ???-??-??)</b></td>
+            <td>
+                <input type="tel" name="phone" placeholder="{{phone}}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}">
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Роль (зверніть увагу на це поле!)</b></td>
+            <td>
+                <select name="roles">
+                    <option value="USER" selected>USER</option>
+                    <option value="MASTER">MASTER</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Логін</b></td>
+            <td><input type="text" name="username" minlength="6" maxlength="30" placeholder="{{username}}"></td>
+        </tr>
+
+        <tr>
+            <td><input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <input type="image" name="picture" src="/images/check-mark.png"/></td>
+            <td><a href="/admin"><img src="/images/cancel.png"></a></td>
+        </tr>
+    </form>
+    {{/us}}
+
+    {{#add}}
+    <form action="/admin/user/add" method="post">
+
+        <tr>
+            <td><b>Ім'я</b></td>
+            <td><input type="text" name="name" placeholder="Ім'я"/></td>
+        </tr>
+        <tr>
+            <td><b>Телефон</b></td>
+            <td>
+                <input type="tel" name="phone" placeholder="Телефон ???-??-??" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}">
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Роль</b></td>
+            <td>
+                <select name="roles">
+                    <option value="USER" selected>USER</option>
+                    <option value="MASTER">MASTER</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Логін</b></td>
+            <td><input type="text" name="username" minlength="6" maxlength="30" required placeholder="Логін*"></td>
+        </tr>
+
+        <tr>
+            <td><b>Пароль</b></td>
+            <td>
+                <input type="password" name="password" minlength="6" maxlength="30" required placeholder="Пароль*">
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <input type="image" name="picture" src="/images/check-mark.png"/></td>
+            <td><a href="/admin"><img src="/images/cancel.png"></a></td>
+        </tr>
+    </form>
+    {{/add}}
+    </tbody>
+</table>

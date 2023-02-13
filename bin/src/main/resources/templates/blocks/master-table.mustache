@@ -1,0 +1,87 @@
+<table>
+    {{^add}}
+    <thead>
+    <tr>
+        <td>Ім'я</td>
+        <td>Категорія</td>
+        <td>Час</td>
+        {{^add}}
+        {{^edit}}
+        <td><a href="/admin/cast/add"><img src="/images/plus.png"></a></td>
+        {{/edit}}
+        {{/add}}
+        {{#add}}
+        <td>Пароль</td>
+        <td></td>
+        {{/add}}
+        <td></td>
+    </tr>
+
+    </thead>
+    {{/add}}
+    <tbody>
+
+    {{#master}}
+    <tr>
+        <td>{{users.name}}</td>
+        <td>{{category}}</td>
+        <td>{{time}}</td>
+        <td><a href="/admin/cast/{{id}}/edit"><img src="/images/pen.png"></a></td>
+        <td><a href="/admin/cast/{{id}}/delete"><img src="/images/trash.png" height="40px"></a></td>
+    </tr>
+    {{/master}}
+
+    {{#edit}}
+    <form action="/admin/cast/{{id}}/edit" method="post">
+        <tr>
+        <td>{{users.name}}</td>
+        <td>{{category}}</td>
+        <td><input type="text" name="time" required placeholder="{{time}}"></td>
+            <td><input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <input type="image" name="picture" src="/images/check-mark.png"/></td>
+            <td><a href="/admin/cast"><img src="/images/cancel.png"></a></td>
+        </tr>
+    </form>
+    {{/edit}}
+
+    {{#add}}
+    <form action="/admin/cast/add" method="post">
+
+        <tr>
+            <td><b>Майстер</b></td>
+            <td>
+                <select name="id">
+                    {{# ms}}
+                    <option value="{{id}}">{{name}}</option>
+                    {{/ ms}}
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Категорія</b></td>
+            <td>
+                <select name="category">
+                    <option value="Манікюр" selected>Манікюр</option>
+                    <option value="Зачіски">Зачіски</option>
+                    <option value="Косметологія">Косметологія</option>
+                    <option value="Інше">Інше</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Час</b></td>
+            <td><input type="time" name="time" min="08:00" max="16:00"/></td>
+        </tr>
+
+        <tr>
+            <td><input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <input type="image" name="picture" src="/images/check-mark.png"/></td>
+            <td><a href="/admin/cast"><img src="/images/cancel.png"></a></td>
+        </tr>
+
+    </form>
+    {{/add}}
+    </tbody>
+</table>

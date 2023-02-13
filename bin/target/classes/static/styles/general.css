@@ -1,0 +1,101 @@
+body {
+    background: url(../images/background.JPG);
+    background-size: 100% auto;
+    font-family: Monotype Corsiva, fantasy;
+    margin: 0;
+}
+
+h1 {
+    font-size: 72px;
+    text-align: center;
+    margin: 0;
+    color: #333;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+#header {
+    background: #eeb5b5;
+    border: 5px solid #ad8585;
+}
+
+#sidebar {
+    font-family: Century Gothic, cursive;
+    font-size: 20px;
+    float: left;
+    width: 20%;
+    padding: 5px;
+    margin: 10px 10px 20px 5px;
+}
+
+#content {
+    font-family: Century Gothic, fantasy;
+    color: #ffeeee;
+    background: rgba(79, 87, 98, 0.8);
+    margin: 10px 5px 20px 25%;
+    padding: 5px;
+    line-height: 30px;
+}
+
+#footer {
+    position: fixed;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    width: 99.3%;
+    left: 0;
+    bottom: 0;
+    background: #333;
+    padding: 5px;
+    color: #fff;
+    clear: left;
+}
+
+#data {
+    font-family: Century Gothic, fantasy;
+    font-size: 20px;
+    color: #333333;
+    background: rgba(228, 227, 242, 0.9);
+    margin: 30px 5% 20px 20%;
+    padding: 30px;
+    border: 3px solid #5e5d74;
+    line-height: 30px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+input[type="image"]{
+    height: 32px;
+    width: 32px;
+    text-align: center;
+}
+
+input[type="tel"] {
+    border: 1px solid #292829;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    padding: 12px 10px;
+    width: 238px;
+    -webkit-appearance: none;
+}
+
+input[type="date"] {
+    border: 1px solid #292829;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    padding: 12px 10px;
+    width: 238px;
+    -webkit-appearance: none;
+}
+
+input[type="time"] {
+    border: 1px solid #292829;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    padding: 12px 10px;
+    width: 238px;
+    -webkit-appearance: none;
+}

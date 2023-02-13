@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "master_time")
 public class Master {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)

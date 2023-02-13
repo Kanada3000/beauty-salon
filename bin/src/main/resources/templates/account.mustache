@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Beauty Lady</title>
+
+    <link rel="stylesheet" href="/styles/table.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/styles/general.css">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+{{> blocks/top}}
+
+{{#user_role}}
+{{> blocks/user-menu}}
+{{/user_role}}
+
+{{#master_role}}
+{{> blocks/master-menu}}
+{{/master_role}}
+
+{{#admin_role}}
+{{> blocks/admin-menu}}
+{{/admin_role}}
+
+<div id="data">
+    <div>
+        <h2 align="center">Мій кабінет</h2>
+        <br/>
+        {{#user}}
+        <p>
+            <Strong>Ім'я</Strong> {{name}}
+        </p>
+        <p>
+            <Strong>Телефон</Strong> {{phone}}
+        </p>
+        <p>
+            <Strong>Логін</Strong> {{username}}
+        </p>
+        {{/user}}
+
+
+        {{#user_role}}
+        <br/><br/>
+        <h2 align="center">Мої записи</h2>
+        {{#visit}}
+        <table>
+            <thead>
+            <tr>
+                <td>Послуга</td>
+                <td>Дата</td>
+                <td>Час</td>
+                <td>Статус</td>
+            </tr>
+            </thead>
+            <tbody>
+            {{#visits}}
+            <tr>
+                <td>{{services.name}}</td>
+                <td>{{date}}</td>
+                <td>{{time}}</td>
+                <td>{{status}}</td>
+            </tr>
+            {{/visits}}
+            </tbody>
+        </table>
+        {{/visit}}
+        {{^visit}}
+        <p>
+            У вас ще немає записів
+        </p>
+        {{/visit}}
+        <br/>
+        {{/user_role}}
+
+
+        {{#master_role}}
+        <br/><br/>
+        <h2 align="center">Моя категорія та час роботи</h2>
+        {{#master}}
+        <p>
+            <Strong>{{category}}</Strong>
+        </p>
+        <p>
+            {{time}}
+        </p>
+        <br/>
+        {{/master}}
+        {{/master_role}}
+    </div>
+</div>
+
+<div id="footer">&copy; Beauty Lady 2020</div>
+</body>
+</html>

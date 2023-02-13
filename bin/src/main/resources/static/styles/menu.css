@@ -1,0 +1,57 @@
+.button {
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    width: 222px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px;
+    background-color: #edb4b4;
+    color: #333333;
+    border: 3px solid #333333;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer
+}
+
+.active-button {
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    padding: 8px;
+    background-color: #333;
+    color: #fff;
+    border: 3px solid #ac8484;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    cursor: default
+}
+
+.ghost-button-thick-border {
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    padding: 8px;
+    background-color: #fff1f1;
+    color: #333333;
+    border: 3px solid #ac8484;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    transition: background-color 0.3s ease-out,
+    color 0.2s ease-out;
+}
+
+.ghost-button-thick-border:hover,
+.ghost-button-thick-border:active {
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.1s ease-in,
+    color 0.3s ease-in;
+}
+

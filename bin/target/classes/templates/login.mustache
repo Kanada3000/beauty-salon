@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Beauty Lady - Вхід</title>
+    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div id="login-form">
+    <h1>АВТОРИЗАЦІЯ</h1>
+    <fieldset>
+        <form action="/login" method="post">
+            <input type="text" name="username" required placeholder="Логін*"/>
+            <input type="password" name="password" required placeholder="Пароль*"/>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+            <input type="submit" value="ВХІД"/>
+        </form>
+        <form action="/registration" method="get">
+            <input type="submit" value="РЕЄСТРАЦІЯ"/>
+        </form>
+    </fieldset>
+</div>
+<div id="footer">&copy; Beauty Lady 2020</div>
+</body>
+</html>

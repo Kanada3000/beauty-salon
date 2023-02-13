@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Beauty Lady</title>
+
+    <link rel="stylesheet" href="/styles/pop.css">
+    <link rel="stylesheet" href="/styles/services.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/styles/general.css">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+
+{{> blocks/top}}
+
+{{> blocks/user-menu}}
+
+<div id="content">
+
+    <div class="holder-nail"> МАНІКЮР
+        <div class="block">
+
+            {{#nails}}
+            <p><a href="/user/services/add/{{id}}#win1" class="a-service">{{name}}</a></p>
+            {{/nails}}
+
+        </div>
+    </div>
+    <div class="holder-hair">ЗАЧІСКИ
+        <div class="block">
+
+            {{#hair}}
+            <p><a href="/user/services/add/{{id}}#win1" class="a-service">{{name}}</a></p>
+            {{/hair}}
+
+        </div>
+    </div>
+    <div class="holder-cosm">КОСМЕТОЛОГІЯ
+        <div class="block">
+
+            {{#cosm}}
+            <p><a href="/user/services/add/{{id}}#win1" class="a-service">{{name}}</a></p>
+            {{/cosm}}
+
+        </div>
+    </div>
+    <div class="holder-other">ІНШІ
+        <div class="block">
+
+            {{#other}}
+            <p><a href="/user/services/add/{{id}}#win1" class="a-service-other">{{name}}</a></p>
+            {{/other}}
+
+        </div>
+    </div>
+
+    <form action="/user/services/new-visiting" method="post">
+
+        <a href="/user/services/close" class="overlay" id="win1"></a>
+        <div class="popup">
+            <h2>ОБЕРІТЬ БУДЬ-ЛАСКА ДАТУ</h2>
+            <br/>
+            <br/>
+            {{#mins}}
+            <input type="date" name="date" min="{{min}}" max="{{max}}" required/>
+            {{/mins}}
+            <br/>
+            <br/>
+            <p>
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <button type="submit"> Перевірити вільний час</button>
+            </p>
+            <a class="close" title="Закрити" href="/user/services/close"></a>
+        </div>
+    </form>
+    <a href="/user/services/close" class="overlay" id="win4"></a>
+    <div class="popup">
+        <h2>ОБЕРІТЬ БУДЬ-ЛАСКА ЧАС</h2>
+        <br/>
+        {{#vs}}
+        <br/>
+        <a href="/user/services/add-time/{{users.id}}/{{time}}" class="a-service">
+            <strong>{{users.name}}</strong> - {{time}}
+        </a>
+        <br/>
+        {{/vs}}
+        <br/>
+        <a class="close" title="Закрыть" href="/user/services/close"></a>
+    </div>
+
+</div>
+<div id="footer" style="position: static">&copy; Beauty Lady 2020</div>
+
+</body>
+</html>

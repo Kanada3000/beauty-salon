@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Beauty Lady - Реєстрація</title>
+    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div id="login-form">
+    <h1>РЕЄСТРАЦІЯ</h1>
+    {{#message}}
+    <p align="center">{{message}}</p>
+    {{/message}}
+    <fieldset>
+        <form action="/registration" method="post">
+            <input type="text" name="name" required placeholder="Ім'я*">
+            <input type="tel" name="phone" placeholder="Телефон ???-??-??" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}">
+            <input type="text" name="username" minlength="6" maxlength="30" required placeholder="Логін*">
+            <input type="password" name="password" minlength="6" maxlength="30" required placeholder="Пароль*">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            <button type="submit" class="class-for-button">ЗАРЕЄСТРУВАТИСЯ</button>
+        </form>
+    </fieldset>
+</div>
+<div id="footer">&copy; Beauty Lady 2020</div>
+</body>
+</html>

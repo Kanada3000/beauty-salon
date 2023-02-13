@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Beauty Lady</title>
+
+    <link rel="stylesheet" href="/styles/table.css">
+    <link rel="stylesheet" href="/styles/input.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/styles/general.css">
+
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/images/favicon.ico">
+</head>
+<body>
+
+{{> blocks/top}}
+
+{{> blocks/master-menu}}
+
+<div id="data">
+    <table>
+        <thead>
+        <tr>
+            <td>Назва</td>
+            <td>Категорія</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#service}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{category}}</td>
+        </tr>
+        {{/service}}
+
+        {{#serv}}
+        <form action="/master/services/{{id}}/edit" method="post">
+            <tr>
+                <td><input type="text" name="name" placeholder="{{name}}"/></td>
+                <td>
+                    <select name="category">
+                        <option value="Манікюр" selected>Манікюр</option>
+                        <option value="Зачіски">Зачіски</option>
+                        <option value="Косметологія">Косметологія</option>
+                        <option value="Інше">Інше</option>
+                    </select>
+                </td>
+                <td><input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                    <input type="image" name="picture" src="/images/check-mark.png"/></td>
+                <td><a href="/master/services"><img src="/images/cancel.png"></a></td>
+            <tr/>
+        </form>
+        {{/serv}}
+        </tbody>
+    </table>
+</div>
+<div id="footer">&copy; Beauty Lady 2020</div>
+</body>
+</html>
